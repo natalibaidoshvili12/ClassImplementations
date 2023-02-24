@@ -92,10 +92,7 @@ public class MyMap<K,V> implements Map<K,V> {
     @Override
     public void putAll(Map m) {
         for(Object key : m.keySet()){
-            if(logLength==allocLength) grow();
-            keys[logLength] = key;
-            values[logLength] = m.get(key);
-            logLength++;
+            put(key, m.get(key));
         }
     }
 
