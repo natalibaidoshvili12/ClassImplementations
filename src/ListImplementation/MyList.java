@@ -169,7 +169,13 @@ public class MyList<E> implements List<E> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        Object[] elements = c.toArray();
+        for (int i = 0; i < elements.length; i++) {
+            if(!contains(elements[i])) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
