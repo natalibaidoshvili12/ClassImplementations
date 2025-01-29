@@ -149,7 +149,11 @@ public class MyList<E> implements List<E> {
 
     @Override
     public List<E> subList(int fromIndex, int toIndex) {
-        return null;
+        List<E> elemList = new ArrayList<>();
+        for (int i = fromIndex; i < toIndex; i++) {
+            elemList.add((E) elems[i]);
+        }
+        return elemList;
     }
 
     @Override
