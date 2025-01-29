@@ -177,7 +177,7 @@ public class MyList<E> implements List<E> {
         Object[] elements = c.toArray();
         for (int i = 0; i < elements.length; i++) {
             if(!add((E) elements[i])) {
-                return false;
+                return false; // comment
             }
         }
         return true;
